@@ -1,0 +1,60 @@
+#wordBlock p{
+  height: 1.5em;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+}
+#wordBlock p.error{
+  animation: error 0.8s backwards;
+}
+
+.letter{
+  display: inline-block;
+  padding: 0.2em;
+  
+  width: 1em;
+  height: 0em;
+  transition: height 1s, background-color 1s;
+  overflow: hidden;
+  margin: 2px;
+  border-bottom: 2px solid #ccc;
+}
+
+.revealed{
+  border-top: 2px solid #ccc;
+  background-color: #eee;
+  border-bottom: 0px;
+  height: 1.5em;
+}
+
+#wordBlock.finished .letter{
+  animation: dance 1s 1s forwards;
+}
+@keyframes error{
+  from{
+    background-color: transparent;
+  }
+  50%{
+    background-color: rgb(255, 115, 115);
+  }
+  to{
+    background-color: transparent;
+  }
+}
+@keyframes dance{
+  from{
+    margin-bottom: 0px;
+    transform: rotate(0deg);
+  }
+  50%{
+    margin-bottom: 8px;
+    transform: rotate(-20deg);
+  }
+  to{
+    margin: 0px;
+    transform: rotate(0deg);
+    background-color: rgb(133, 255, 77);
+    border: none;
+  }
+}
